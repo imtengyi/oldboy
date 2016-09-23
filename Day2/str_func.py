@@ -1,0 +1,10 @@
+name = str("qwertyqwerty")
+print (type(str))
+print (dir(str))
+
+print(name.count("q"))
+print(name.center(50,'*'))
+print(name.capitalize())
+print(name.encode("gbk"))
+print(name.endswith("ty"))
+print(name.__contains__("er"))
