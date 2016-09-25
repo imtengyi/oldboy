@@ -27,4 +27,3 @@ while True:
     mall_choice_count = input("Please input how many you want:")      #get how many you want
 
     cart[mall_choice] = int(mall_choice_count)
-    print (cart)
