@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
-from backend.logic import handle
+# from backend.logic import handle
+# import os
 
-handle.home()
+# handle.home()
+bash = input()

@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+import os
+import sys
+bash_path = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+sys.path.append(bash_path)
 from configs import settings
 
 def db_auth(configs):
