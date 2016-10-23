@@ -26,8 +26,18 @@ if __name__ == '__main__':
         if user_choice == '0':
             conn.send(bytes('0','utf-8'))
             sys.exit()
-        elif int(user_choice) in [1,2,3,4,5,6,7]:
-            conn.send(bytes(user_choice,'utf-8'))
-        else:
-            print("Input error,please choose again!")
-            continue
+        elif user_choice == '1':
+            conn.send(bytes('1','utf-8'))
+            get_res = conn.recv(1024)
+            print(str(get_res,'utf-8'))
+            input("Press Enter to continue...")
+        elif user_choice == '2':
+            conn.send(bytes('2','utf-8'))
+            mk_dir_name = input("Directory name:")
+            conn.send(bytes(mk_dir_name,'utf-8'))
+            get_res = conn.recv(1024)
+            if str(get_res,'utf-8') == '1':
+                print("success")
+            elif str(get_res,'utf-8') == '0':
+                print("failure")
+            input("Press Enter to continue...")
