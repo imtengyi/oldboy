@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
-__auther__ = 'dmmjy9'
+__author__ = 'dmmjy9'
 
-import socket
+import threading
+import time
 
-ip_port = ('127.0.0.1',9000)
-sk = socket.socket()
-sk.connect(ip_port)
-sk.sendall(bytes('connection succeed','utf-8'))
-server_reply = sk.recv(1024)
-print(str(server_reply,'utf-8'))
-while True:
-	client_input = input("->>")
-	sk.sendall(bytes(client_input,'utf-8'))
-	server_reply = sk.recv(1024)
-	print(str(server_reply,'utf-8'))
+def sayhi(num):
+	print("running on theard %s"%num)
+	time.sleep(3)
+
+if __name__ == '__main__':
+	t_list = []
+	for i in range (10):
+		t = threading.Thread(target=sayhi,args=(i,))
+		t.start()
+		t_list.append(t)
+	for i in t_list:
+		i.join()
+	print("---main---")
