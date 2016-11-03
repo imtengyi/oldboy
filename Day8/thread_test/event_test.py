@@ -10,7 +10,7 @@ def light():
 		event.set()
 	count = 0
 	while True:
-		if count < 0:
+		if count < 10:
 			print('\033[42;1m--green light on--\033[0m')
 		elif count < 13:
 			print('\033[43;1m--yellow light on--\033[0m')
