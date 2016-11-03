@@ -13,7 +13,7 @@ def Bar(arg):
 
 if __name__ == '__main__':
 	freeze_support()
-	pool = Pool(5)
+	pool = Pool(5)		#setup a pool that allow 5 threads at the same time
 	for i in range(10):
 		pool.apply_async(func=Foo,args=(i,),callback=Bar)	#cannot use 'callback' when sync
 		# pool.apply(func=Foo,args=(i,))

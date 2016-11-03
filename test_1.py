@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 __author__ = 'dmmjy9'
 
-import threading,time
+import threading
+import time
 
 def light():
 	if not event.isSet():
@@ -21,13 +22,14 @@ def light():
 			count = 0
 		time.sleep(1)
 		count += 1
+
 def car(n):
 	while True:
 		time.sleep(1)
 		if event.isSet():
-			print("car [%s] running"%n)
+			print("car [%s] is running"%n)
 		else:
-			print("car [%s] waiting"%n)
+			print("car [%s] is waiting"%n)
 			event.wait()
 
 if __name__ == '__main__':

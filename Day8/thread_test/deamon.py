@@ -17,7 +17,7 @@ def main():
 	# t.join(1)
 
 m = threading.Thread(target=main,args=[])
-# m.setDaemon(True)
+m.setDaemon(True)
 m.start()
 # m.join(timeout=3)
 
